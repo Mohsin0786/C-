@@ -1,0 +1,47 @@
+#include <iostream>
+using namespace std;
+
+int last_Occurance(int arr1[] , int size, int x){
+int ans;
+if(size == 0){
+
+return -1;
+
+}
+// if(arr1[0]==x){
+//     return 0;
+// }
+ans = last_Occurance(arr1+1,size-1,x);
+if(ans == -1 ){ //Checking if more than one same element were present if not that it will return -1
+
+    if(arr1[0]==x)     //After that if no more element found Check it at 0th index and return 0;
+
+    {        
+        return 0;
+    }
+    
+    else{
+        return -1;
+    }
+
+}
+    else{
+        return ans+1;
+    }
+}
+
+
+
+
+int main() {
+  
+  int n,x;
+  n=6;
+  cin>>x;
+  
+int arr1[] ={5,8,4,7,4,9};
+
+cout<<last_Occurance(arr1,n,x);
+
+return 0;
+}
