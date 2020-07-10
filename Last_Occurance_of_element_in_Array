@@ -8,9 +8,7 @@ if(size == 0){
 return -1;
 
 }
-// if(arr1[0]==x){
-//     return 0;
-// }
+
 ans = last_Occurance(arr1+1,size-1,x);
 if(ans == -1 ){ 
 
