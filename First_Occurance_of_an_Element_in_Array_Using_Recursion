@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+int first_Occurance(int arr1[] , int size, int x){
+int ans;
+if(size == 0){
+
+return 0;
+
+}
+if(arr1[0]==x){
+    return 0;
+}
+ans = first_Occurance(arr1+1,size-1,x);
+if(ans == -1 ){
+    return -1;
+}
+    else{
+        return ans+1;
+    }
+}
+
+
+
+
+int main() {
+  
+  int n,x;
+  n=5;   //Size of Array
+  cin>>x;// Input the element whose Occurance is to be find
+  
+int arr1[] ={5,8,4,7,6,9};
+
+cout<<first_Occurance(arr1,n,x);
+
+return 0;
+}
