@@ -5,7 +5,7 @@ int first_Occurance(int arr1[] , int size, int x){
 int ans;
 if(size == 0){
 
-return 0;
+return -1;
 
 }
 if(arr1[0]==x){
