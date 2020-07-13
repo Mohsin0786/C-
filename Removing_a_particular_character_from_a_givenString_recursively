@@ -1,0 +1,26 @@
+#include <iostream>
+#include<cstring>
+ void remove_str(char str[]){
+    
+  if(str[0]=='\0'){
+      return ;
+  }
+  if(str[0]!='x'){
+   remove_str(str+1);
+ }
+ else{
+      int i;
+     for(i=1;str[i]!='\0';i++){
+         str[i-1]=str[i];
+     }
+     str[i-1]=str[i];
+     remove_str(str);  
+ }
+ }
+using namespace std;
+int main() {
+    char str[100];
+    cin>>str;
+    remove_str(str);
+    cout<<str;
+}
