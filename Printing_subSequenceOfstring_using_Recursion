@@ -1,0 +1,22 @@
+#include<iostream>
+using namespace std;
+void subSeq(string input,string output){
+    if(input.size() == 0){
+       cout<<output<<endl;
+        return;
+    }
+    subSeq(input.substr(1),output);
+    subSeq(input.substr(1),output + input[0]);
+
+}
+
+
+int main(){
+
+	string input;
+    string output = "";
+    cout<<"Enter the string"<<endl;
+    cin>>input;
+    subSeq(input,output);
+
+}
