@@ -1,0 +1,31 @@
+#include<iostream>
+using namespace std;
+int binary_search(int *arr,int to_be_found,int start, int end){
+    if(start>end)
+    {
+        return -1;
+    }
+    else{
+        int mid = (start + end) / 2;
+        if (arr[mid] == to_be_found)
+            return mid;
+        else
+        {
+            if (arr[mid] < to_be_found)
+                return binary_search(arr, to_be_found, mid + 1, end);
+            
+            else
+                return binary_search(arr, to_be_found, start, mid - 1);
+        }
+    }
+
+}
+int main(){
+  int arr [] ={1,2,4,6,8,9};
+  int to_be_found;
+  int size = 6;
+    cout<<"Enter the the no to search"<<endl;
+    cin>>to_be_found;
+    cout<<binary_search(arr,to_be_found,0,size-1);
+
+}
