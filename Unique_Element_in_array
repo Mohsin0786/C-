@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+int UniqueElements(int arr[],int size){
+    int no = arr[0];
+    for(int i=1;i<size;i++){
+        no = no ^ arr[i]; 
+    }
+    return no;
+}
+
+void main() {
+ int size;
+ cout<<"Enter the Size of Array & it Must be Odd in size"<<endl;
+ cin>>size;
+ int arr[size];
+ cout<<"Enter the  Elements in array"<<endl;
+ for(int i=0;i<size;i++){
+     cin>>arr[i];
+ }
+ cout<<UniqueElements(arr,size);
+
+}
